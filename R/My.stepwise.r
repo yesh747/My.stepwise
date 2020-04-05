@@ -149,6 +149,7 @@ My.stepwise.lm <- function(Y, variable.list, in.variable="NULL", data, sle=0.15,
         if(length(summary(final.model)$coefficients[,1]) > 2) print(vif(final.model))
 
         break.rule <- FALSE
+        return(final.model)
       }
       enter.x <- NULL
     }
@@ -327,6 +328,7 @@ My.stepwise.glm <- function(Y, variable.list, in.variable="NULL", data, sle=0.15
         break.rule <- FALSE
       }
       enter.x <- NULL
+      return(final.model)
     }
   } else {
     cat("# ==================================================================================================\n")
