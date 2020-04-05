@@ -576,6 +576,7 @@ My.stepwise.coxph <- function(Time=NULL, T1=NULL, T2=NULL, Status=NULL, variable
       {
         print(vif(glm(paste(Status, paste(names(final.model$coefficients), collapse="+"), sep="~"), data=data, family=binomial(link="logit"))))
       }
+      return(final.model)
       break.rule <- FALSE
     }
 
